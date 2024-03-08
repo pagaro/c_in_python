@@ -11,14 +11,18 @@ void insertion_aleatoire(Array t) {
 }
 
 void display_t(Array t) {
-    printf("Affichage de la table\n");
+    printf("\nAffichage de la table\n");
     printf("Taille de la table = %d\n", t.size);
     printf("Somme minimale et maximale = %d\n", t.som_min_max);
-    printf("Minimum = %d\n", t.min);
-    printf("Maximum = %d\n", t.max);
+    printf("Minimum = %d\n", t.array[t.index_min]);
+    printf("Maximum = %d\n", t.array[t.index_max]);
+    printf("Somme min i = %d\n", t.som_min_i);
+    printf("Somme max i = %d\n", t.som_max_i);
+    printf("Step = %d\n", t.step);
     for (int i = 0; i < t.size; i++) {
         printf("T[%d] = %d ", i, t.array[i]);
     }
+    printf("\n");
 }
 
 bool recherche(Array t, int val) {
@@ -30,37 +34,44 @@ bool recherche(Array t, int val) {
 }
 
 void calcul_som_min_max(Array *t) {
-    int som_min_i = 0;
-    int som_max_i = 0;
-    for (int i = 0; i < t->size; i++) {
-        int num = t->array[i];
-        som_min_i += num;
-        som_max_i += num;
-        if (num < t->min) {
-            t->min = num;
-            t->som_min_max = som_max_i;
-            som_min_i = num;
+    if (t->step < t->size) {
+        int num = t->array[t->step];
+        t->som_min_i += num;
+        t->som_max_i += num;
+
+        if (num < t->array[t->index_min]) {
+            t->index_min = t->step;
+            t->som_min_max = t->som_max_i;
+            t->som_min_i = num;
         }
-        if (num > t->max) {
-            t->max = num;
-            t->som_min_max = som_min_i;
-            som_max_i = num;
+        if (num > t->array[t->index_max]) {
+            t->index_max = t->step;
+            t->som_min_max = t->som_min_i;
+            t->som_max_i = num;
         }
+        t->step++;
+    } else{
+        printf("To many steps\n");
     }
 }
 
 int main() {
     Array array;
-    array.size = 10;
+    array.size = 5;
     array.som_min_max = 0;
-    array.min = INT_MAX;
-    array.max = INT_MIN;
+    array.som_min_i = 0;
+    array.som_max_i = 0;
+    array.step = 0;
+    array.index_min = 0;
+    array.index_max = 0;
     array.array = (int *) malloc(array.size * sizeof(int));
 
     insertion_aleatoire(array);
     display_t(array);
+    for (int i = 0; i < array.size ; i++) {
+        calcul_som_min_max(&array);
+    }
 
-    calcul_som_min_max(&array);
     display_t(array);
 
     return 0;

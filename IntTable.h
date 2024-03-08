@@ -13,9 +13,12 @@
 typedef struct {
     int *array;
     int som_min_max;
-    int min;
-    int max;
+    int som_min_i;
+    int som_max_i;
+    int index_min;
+    int index_max;
     int size;
+    int step;
 } Array;
 
 void fill(Array * pt);
