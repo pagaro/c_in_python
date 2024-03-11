@@ -17,6 +17,6 @@ Cela générera une bibliothèque partagée (`libarray_ops.so` ou `libarray_ops.
 Pour lancer le notebook, utilisez les commandes suivantes :
 
 1. Installer jupyter : `sudo apt install jupyter`
-1. Lancer le notebook : `jupyter notebook`
-2. Installer les dépendances : `!pip install numpy matplotlib`
-3. Exécuter les cellules 
+2. Lancer le notebook : `jupyter notebook`
+3. Installer les dépendances : `!pip install -r requirements.txt`
+4. Exécuter les cellules 
