@@ -10,6 +10,7 @@ void insertion_aleatoire(Array t) {
     }
 }
 
+//not use in python script
 void display_t(Array t) {
     printf("\nAffichage de la table\n");
     printf("Taille de la table = %d\n", t.size);
@@ -55,6 +56,7 @@ void calcul_som_min_max(Array *t) {
     }
 }
 
+//not use in python script
 int main() {
     Array array;
     array.size = 5;
