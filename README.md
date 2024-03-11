@@ -16,7 +16,7 @@ Cela générera une bibliothèque partagée (`libarray_ops.so` ou `libarray_ops.
 
 Pour lancer le notebook, utilisez les commandes suivantes :
 
-1. Creer un environnement virtuel : `python3 -m venv env`
+1. Creer un environnement virtuel : `python3 -m venv venv`
 2. Activer l'environnement virtuel : `source venv/bin/activate`
 3. Installer les dépendances : `pip install -r requirements.txt`
 4. Lancer le notebook : `jupyter notebook`
