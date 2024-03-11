@@ -1,23 +1,22 @@
-# Animation de Tri par Insertion
+# Projet Array Operations
 
-Ce projet illustre le tri par insertion avec une animation visuelle en utilisant Python et Matplotlib. Il montre le processus étape par étape, mettant en évidence les éléments comparés et insérés à leur position correcte.
+Ce projet implémente des opérations sur des tableaux en C, avec une interface Python pour visualiser les opérations étape par étape.
 
-## Prérequis
+## Compilation des librairies
 
-- Python 3.6+
+Pour compiler le projet, utilisez les commandes suivantes :
 
-## Configuration de l'Environnement
+1. Créer un répertoire de build : `mkdir cmake-build-debug && cd cmake-build-debug`
+2. Générer les fichiers de build avec CMake : `cmake ..`
+3. Compiler le projet : `cmake --build .`
 
-1. Créez un environnement virtuel : `python -m venv env`
-2. Activez l'environnement virtuel :
-   - Sous Windows : `env\Scripts\activate`
-   - Sous Unix ou MacOS : `source env/bin/activate`
-3. Installez les dépendances : `python3 -m pip install matplotlib numpy`
+Cela générera une bibliothèque partagée (`libarray_ops.so` ou `libarray_ops.dll`) et un exécutable (`ArrayOperationsApp`).
 
-## Exécution du Script
+## Lancement jupyter notebook et instalation des dépendances
 
-Exécutez le script Python pour démarrer l'animation : `python main.py`
+Pour lancer le notebook, utilisez les commandes suivantes :
 
-## Structure du Projet
-
-- `main.py` : Script principal contenant la logique de l'animation du tri par insertion.
+1. Installer jupyter : `sudo apt install jupyter`
+1. Lancer le notebook : `jupyter notebook`
+2. Installer les dépendances : `!pip install numpy matplotlib`
+3. Exécuter les cellules 
